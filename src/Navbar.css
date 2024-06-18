@@ -1,0 +1,60 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(240, 130, 60); /*116466 rgb(33, 52, 57)*/
+    padding: 10px 20px;
+    color: white;
+    height: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ 
+  
+.navbar-logo {
+    font-size: 40px;
+    font-weight: bold;
+}
+  
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+  
+.profile-photo {
+    width: 60px;
+    height: 60px;
+    background-color: #D1E8E2;
+    border-radius: 50%;
+    align-content: center;
+    font-size: 30px;
+    color: black;
+}
+  
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+
+.dropdown-menu a:hover {
+    background-color: #D1E8E2;
+}
