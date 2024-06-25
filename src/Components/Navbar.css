@@ -19,12 +19,12 @@ a {
     font-weight: bold;
 }
 
-.menu-itmes {
+.menu-items {
     display: flex;
     align-items: center;
 }
 
-.menu-itmes ul {
+.menu-items ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -32,18 +32,18 @@ a {
     align-items: center;
 }
 
-.menu-itmes ul li {
+.menu-items ul li {
     margin: 0 20px;
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
-.menu-itmes ul li a {
+.menu-items ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-.menu-itmes ul li a:hover {
+.menu-items ul li a:hover {
     text-decoration: underline;
 }
   
