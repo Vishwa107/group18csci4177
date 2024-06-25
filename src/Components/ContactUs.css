@@ -14,7 +14,7 @@ h1 {
 
 .contact-us-content {
     width: 100%;
-    height: calc(100vh - 100px); /* Adjust height to fit the screen */
+    height: calc(100vh - 100px);
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
