@@ -14,7 +14,6 @@ import Chatbot from './Components/Chatbot.js';
 import ContactUs from './Components/ContactUs'; 
 import Popup from './Components/Popup.js';
 import blogs from './Images/blogs.jpeg';
-import connect from './Images/connect.jpg';
 import Footer from './Components/Footer.js';
 
 function App() {

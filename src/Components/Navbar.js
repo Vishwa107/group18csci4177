@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Faqs from './Faqs';
-import ContactUs from './ContactUs';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
