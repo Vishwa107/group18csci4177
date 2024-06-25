@@ -11,6 +11,7 @@ import halifax from './Images/Halifax.jpg';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Faqs from './Components/Faqs.js';
 import Chatbot from './Components/Chatbot.js';
+import ContactUs from './Components/ContactUs'; 
 import Popup from './Components/Popup.js';
 import blogs from './Images/blogs.jpeg';
 import connect from './Images/connect.jpg';
@@ -40,6 +41,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/1" element={<h1>Card 1 Details</h1>} />
+          {/* <Route path="/2" element={<Faqs />} /> */}
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/2" element={
             <>
               <Navbar />
