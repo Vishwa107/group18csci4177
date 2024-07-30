@@ -14,7 +14,6 @@ import Chatbot from './Components/Chatbot.js';
 import ContactUs from './Components/ContactUs'; 
 import Popup from './Components/Popup.js';
 import blogs from './Images/blogs.jpeg';
-import connect from './Images/connect.jpg';
 import Footer from './Components/Footer.js';
 
 function App() {
@@ -128,5 +127,4 @@ export default App;
 7. Housing image: “Enjoy these Cartoon Building Images for free,” Freepik, Dec. 27, 2023. Available: https://www.freepik.com/free-photos-vectors/cartoon-building
 8. Halifax image: J. Pinto, “DHX selling Halifax animation studio,” Nov. 08, 2018. Available: https://kidscreen.com/2018/11/08/dhx-to-sell-halifax-animation-studio/
 9. Blogs image: A. Otalvaro, “How to Transform Blog Articles into Animated Videos in Four Easy Steps,” Video Marketing & Growth Blog | Raw Shorts, Jun. 12, 2019. Available: https://www.rawshorts.com/blog/how-to-transform-blog-articles-into-animated-videos-in-four-easy-steps/
-10. Connect Image: “FreePik.” Available: https://www.freepik.com/search?format=search&query=connect%20with%20us%20. [Accessed: Jun. 20, 2024]
 */

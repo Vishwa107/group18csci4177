@@ -52,7 +52,7 @@
     display: none;
 }
   
-.card-image:hover .card-text {
+.card-container:hover .card-text {
     display: block;
     position: absolute;
     top: 48.5%; 
