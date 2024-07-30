@@ -15,6 +15,7 @@ import ContactUs from './Components/ContactUs';
 import Popup from './Components/Popup.js';
 import blogs from './Images/blogs.jpeg';
 import Footer from './Components/Footer.js';
+import AddUser from './Components/AddUser';
 
 function App() {
   const [showModal, setShowModal] = useState(true);
@@ -39,6 +40,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+        <Route path="/" element={ <AddUser/> } />
           <Route path="/1" element={<h1>Card 1 Details</h1>} />
           {/* <Route path="/2" element={<Faqs />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
@@ -51,7 +53,7 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/" element={
+          <Route path="/home" element={
             <>
               <Navbar />
               <div className='imageContainer'>
