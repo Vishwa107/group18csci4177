@@ -38,7 +38,7 @@ const StoreLocator = () => {
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [map, setMap] = useState(null);
   const [directionsService, setDirectionsService] = useState(null);
-  const [setGeocoder] = useState(null);
+  const [geocoder,setGeocoder] = useState(null);
   const [error, setError] = useState('');
   const [distance, setDistance] = useState(null);
   const autocompleteRef = useRef(null);

@@ -11,7 +11,7 @@ const Navbar = ({ userName }) => {
 
   return (
     <nav className="navbar">
-      <a href='/'>
+      <a href='/home'>
         <div className="navbar-logo">Uni101</div>
       </a>
       <div className='menu-items'>
