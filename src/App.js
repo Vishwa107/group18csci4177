@@ -45,8 +45,8 @@ function App() {
       console.log('Stored token:', token);
       if (token) {
         try {
-          const response = await axios.get('http://localhost:5001/login/me', {
-            headers: { Authorization: `Bearer ${token}` } // Ensure token is prefixed with 'Bearer '
+          const response = await axios.get('https://group18csci4177.onrender.com/login/me', {
+            headers: { Authorization: `Bearer ${token}` } 
           });
           if (response.data.success) {
             setUserName(response.data.user.name);
@@ -64,9 +64,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          {/* <Route path="/2" element={<Faqs />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/4" element={<><Navbar/><Housing/><Footer/></>} />
+          <Route path="/4" element={<><Navbar userName={userName}/><Housing/><Footer/></>} />
           <Route path="/forgot-password" element={<><ForgotPassword /></>} />
           <Route path="/" element={ <Login/> } />
           <Route path="/signup" element={ <AddUser/> } />
@@ -92,19 +91,19 @@ function App() {
                 id={1}
                 image={senior}
                 heading="Meet with Senior"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in rutrum nunc. Donec ultrices augue id urna venenatis, eu laoreet dui hendrerit. Nunc commodo neque quis elit tincidunt, eget scelerisque lorem iaculis. Etiam at dignissim orci. Proin condimentum nec diam sed sagittis. Vivamus sit amet velit vel lorem tincidunt consequat. Morbi maximus tempus nibh, quis egestas libero cursus at. Proin in eros hendrerit, fringilla eros id, rutrum mauris. Mauris vel nulla porta, bibendum justo in, vulputate purus."
+                text="The Meet Your Senior feature connects junior students with experienced mentors. It offers detailed profiles, contact infromation, and subject expertise. Students can contact them through email, provide feedback, and search by expertise. This enhances mentorship and networking opportunities, fostering professional growth and facilitating knowledge sharing within the organization."
                 />
                 <Card
                   id={2}
                   image={ai}
                   heading="AI Chatbot and FAQs"
-                  text="Duis dignissim placerat est ac semper. Phasellus vel bibendum eros. Vestibulum in ex auctor, pellentesque lectus sit amet, vestibulum mauris. Aliquam dignissim fringilla ligula. Fusce vitae urna dapibus, lacinia nisi scelerisque, tincidunt velit. Fusce at ullamcorper mi, a faucibus mauris. Ut urna ipsum, rutrum vel rutrum et, tincidunt eu dolor."
+                  text="The AI Chatbot feature provides instant, automated assistance by answering user queries and facilitating interactions. It utilizes natural language processing to understand and respond accurately. FAQs offer a collection of common questions and answers, giving users quick access to essential information without needing direct support."
                 />
                 <Card
                   id={3}
                   image={resgym}
                   heading="Restaurants and Gyms Near Me"
-                  text="Etiam efficitur sed leo eget porta. Vestibulum ornare, sem sed egestas pulvinar, ante tellus tincidunt tortor, ac lacinia urna lacus quis diam. Suspendisse varius pulvinar lacus, ac pharetra mi euismod ut. Proin commodo interdum libero, sit amet tincidunt libero tempus et. Cras eleifend ipsum nunc, eget tincidunt mi posuere auctor. In posuere, quam id feugiat suscipit, odio velit gravida magna, et gravida velit justo vitae lorem. In sed turpis tortor. Donec hendrerit mauris sit amet nulla aliquet condimentum. Vivamus mollis metus vel diam venenatis, eget laoreet orci placerat."
+                  text="The Restaurants and Gyms Near Me feature uses location data to identify and display nearby dining and fitness options. It provides users with a list of local restaurants and gyms, complete with details like ratings, addresses, and operating hours, enhancing convenience and accessibility for their needs."
                 />
               </div>
               <div className='CardsContainer'>
@@ -112,29 +111,21 @@ function App() {
                   id={4}
                   image={housing}
                   heading="Accommodation Listings"
-                  text="Sed a enim odio. Ut tincidunt ligula eu maximus luctus. Donec finibus efficitur varius. Suspendisse sagittis rutrum cursus. Sed eget imperdiet arcu, ut tempor nulla. Ut aliquet ligula elit, sed rhoncus magna gravida nec. Phasellus ut feugiat metus, non efficitur leo. Integer at massa sed orci iaculis mollis. Sed rutrum erat ut ante pellentesque rutrum. Maecenas imperdiet sagittis dolor, eget cursus augue malesuada a."
+                  text="The Accommodation Listings feature offers a comprehensive database of available lodging options. Students can search for accommodations based on location, price, and amenities. It provides detailed information on each listing, including photos, reviews, and booking details, to help users find and secure their ideal place to stay."
                 />
                 <Card
                   id={5}
                   image={halifax}
                   heading="Learn more about Halifax!"
-                  text="Duis fermentum eu turpis venenatis viverra. Praesent tincidunt risus sed suscipit porttitor. Praesent non dui velit. Morbi lacinia, justo varius suscipit condimentum, mauris massa ullamcorper neque, nec aliquet purus elit vitae nibh. Donec vel interdum lectus, ut pharetra urna. Proin aliquet massa at mauris aliquam hendrerit."
+                  text="The Learn More About Halifax! feature provides users with insightful information about Halifax, including its history, attractions, and local culture. It offers detailed guides, tips, and recommendations for exploring the city, helping users discover notable landmarks, dining options, and activities to enhance their visit."
                 />
                 <Card
                   id={6}
                   image={blogs}
                   heading="Student Blogs"
-                  text="Duis fermentum eu turpis venenatis viverra. Praesent tincidunt risus sed suscipit porttitor. Praesent non dui velit. Morbi lacinia, justo varius suscipit condimentum, mauris massa ullamcorper neque, nec aliquet purus elit vitae nibh. Donec vel interdum lectus, ut pharetra urna. Proin aliquet massa at mauris aliquam hendrerit."
+                  text="The Student Blogs feature showcases personal experiences and insights from students. It offers a platform for students to share their academic journey, campus life, and tips on navigating university life. The blogs provide valuable perspectives, advice, and stories to connect with and support fellow students."
                 />
               </div>
-              {/* <div className='cardd'>
-                <Card
-                  id={7}
-                  image={connect}
-                  heading="Connect with Us"
-                  text="Duis fermentum eu turpis venenatis viverra. Praesent tincidunt risus sed suscipit porttitor. Praesent non dui velit. Morbi lacinia, justo varius suscipit condimentum, mauris massa ullamcorper neque, nec aliquet purus elit vitae nibh. Donec vel interdum lectus, ut pharetra urna. Proin aliquet massa at mauris aliquam hendrerit."
-                />
-              </div> */}
               <Footer />
             </>
           } />

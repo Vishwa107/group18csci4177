@@ -16,7 +16,7 @@ const Housing = () => {
   useEffect(() => {
     const fetchAccommodations = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/accommodations');
+        const response = await axios.get('https://group18csci4177.onrender.com/accommodations');
         setAccommodations(response.data);
       } catch (error) {
         console.error('Error fetching accommodations:', error);

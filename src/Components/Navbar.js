@@ -32,6 +32,7 @@ const Navbar = ({ userName }) => {
           <div className="dropdown-menu">
             <Link to="/profile">Your Profile</Link>
             <Link to="/settings">Settings</Link>
+            <Link to="/">Logout</Link>
           </div>
         )}
       </div>

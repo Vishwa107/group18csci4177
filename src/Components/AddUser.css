@@ -1,6 +1,7 @@
 /* AddUser.css */
 
-form {
+
+.signup-container form {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
@@ -8,6 +9,10 @@ form {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
+}
+
+.signUpheader {
+    color: rgb(240, 130, 60);
 }
 
 form div {
@@ -36,11 +41,12 @@ form button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: rgb(240, 130, 60);
     color: white;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 95%;
 }
 
 form button:hover {
