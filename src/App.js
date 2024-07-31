@@ -20,12 +20,12 @@ import ForgotPassword from './Components/Forgot.js';
 import AddUser from './Components/AddUser.js';
 import Login from './Components/Login.js';
 import axios from 'axios';
+import StoreLocator from './Components/StoreLocator.js';
 
 function App() {
   const [showModal, setShowModal] = useState(true);
   const [userName, setUserName] = useState(null);
-  const JWT_SECRET = process.env.JWT_SECRET;
-
+  
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -71,6 +71,7 @@ function App() {
           <Route path="/" element={ <Login/> } />
           <Route path="/signup" element={ <AddUser/> } />
           <Route path="/1" element={<h1>Card 1 Details</h1>} />
+          <Route path="/3" element={<StoreLocator/>} />
           <Route path="/2" element={
             <>
               <Navbar userName={userName} />
