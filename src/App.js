@@ -15,18 +15,18 @@ import ContactUs from './Components/ContactUs';
 import Popup from './Components/Popup.js';
 import blogs from './Images/blogs.jpeg';
 import Footer from './Components/Footer.js';
-import AddUser from './Components/AddUser';
+import AddUser from './Components/AddUser.js';
+import Login from './Components/Login.js';
+import axios from 'axios';
 
 function App() {
   const [showModal, setShowModal] = useState(true);
+  const [userName, setUserName] = useState(null);
+  const JWT_SECRET = process.env.JWT_SECRET;
 
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
-  // useEffect(() => {
-  //   setShowModal(true);
-  // }, []);
 
   useEffect(() => {
     const isModalShown = localStorage.getItem('isModalShown');
@@ -36,17 +36,40 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    // Fetch user data when the component mounts
+    const fetchUser = async () => {
+      const token = localStorage.getItem('token');
+      console.log('Stored token:', token);
+      if (token) {
+        try {
+          const response = await axios.get('http://localhost:5001/login/me', {
+            headers: { Authorization: `Bearer ${token}` } // Ensure token is prefixed with 'Bearer '
+          });
+          if (response.data.success) {
+            setUserName(response.data.user.name);
+          }
+        } catch (error) {
+          console.error('Error fetching user:', error);
+        }
+      }
+    };
+
+    fetchUser();
+  }, []);
+
   return (
     <div className="App">
       <Router>
         <Routes>
-        <Route path="/" element={ <AddUser/> } />
-          <Route path="/1" element={<h1>Card 1 Details</h1>} />
-          {/* <Route path="/2" element={<Faqs />} /> */}
+          <Route path="/" element={ <Login/> } />
+          <Route path="/signup" element={ <AddUser/> } />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/forgot-password" component={ <Navbar/> } /> 
+          <Route path="/1" element={<h1>Card 1 Details</h1>} />
           <Route path="/2" element={
             <>
-              <Navbar />
+              <Navbar userName={userName} />
               <Faqs />
               <Chatbot />
               <Popup show={showModal} onClose={handleCloseModal} />
@@ -55,7 +78,7 @@ function App() {
           } />
           <Route path="/home" element={
             <>
-              <Navbar />
+              <Navbar userName={userName} />
               <div className='imageContainer'>
                 <img src={title} alt='Housingimagehere' className='housingImage'/>
                 <div className='textOverlay'>Find Housing<br></br>Meet your Seniors<br></br>and More!</div>

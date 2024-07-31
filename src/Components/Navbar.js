@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ userName }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -25,11 +25,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-profile" onClick={toggleDropdown}>
-        <div className="profile-photo">VP</div>
+        <div className="profile-photo">
+          {userName ? userName.charAt(0).toUpperCase() : 'NA'}
+        </div>
         {dropdownOpen && (
           <div className="dropdown-menu">
-            <a href="/">Your Profile</a>
-            <a href="/">Settings</a>
+            <Link to="/profile">Your Profile</Link>
+            <Link to="/settings">Settings</Link>
           </div>
         )}
       </div>
