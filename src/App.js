@@ -15,6 +15,8 @@ import ContactUs from './Components/ContactUs';
 import Popup from './Components/Popup.js';
 import blogs from './Images/blogs.jpeg';
 import Footer from './Components/Footer.js';
+import Housing from './Components/Housing.js';
+import ForgotPassword from './Components/Forgot.js';
 import AddUser from './Components/AddUser.js';
 import Login from './Components/Login.js';
 import axios from 'axios';
@@ -62,10 +64,12 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          {/* <Route path="/2" element={<Faqs />} /> */}
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/4" element={<><Navbar/><Housing/><Footer/></>} />
+          <Route path="/forgot-password" element={<><ForgotPassword /></>} />
           <Route path="/" element={ <Login/> } />
           <Route path="/signup" element={ <AddUser/> } />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/forgot-password" component={ <Navbar/> } /> 
           <Route path="/1" element={<h1>Card 1 Details</h1>} />
           <Route path="/2" element={
             <>
