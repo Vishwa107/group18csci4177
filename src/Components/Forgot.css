@@ -1,15 +1,16 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
   
-  .forgot-password-container {
+.forgot-password-container {
     background: #fff;
+    margin: 50 auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -17,11 +18,11 @@ body {
     width: 100%;
     margin: auto;
     text-align: center;
-  }
+}
   
   h2 {
     margin-bottom: 20px;
-    color: #ff6600; /* Orangish theme */
+    color: rgb(240, 130, 60); /* Orangish theme */
   }
   
   .forgot-password-form .form-group {
@@ -49,7 +50,7 @@ body {
   }
   
   .submit-button {
-    background-color: #ff6600; /* Orangish theme */
+    background-color: rgb(240, 130, 60); /* Orangish theme */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -60,11 +61,11 @@ body {
   }
   
   .submit-button:hover {
-    background-color: #e65c00; /* Darker shade of orange */
+    background-color: #45a049; /* Darker shade of orange */
   }
   
   .message {
     margin-top: 20px;
-    color: #ff6600; /* Orangish theme */
+    color: rgb(240, 130, 60); /* Orangish theme */
   }
   

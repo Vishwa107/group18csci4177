@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Forgot.css'; // Import the CSS file
+import './Forgot.css'; // 
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put('http://localhost:5001/users/update-password', {
+      const response = await axios.put('https://group18csci4177.onrender.com/users/update-password', {
         email,
         location,
         newPassword,

@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/login', { email, password });
+      const response = await axios.post('https://group18csci4177.onrender.com/login', { email, password });
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
         navigate('/home');
