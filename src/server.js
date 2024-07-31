@@ -27,6 +27,9 @@ const loginRouter = require('./routes/login'); // Update this if necessary
 app.use('/users', usersRouter); // Update this path
 app.use('/login', loginRouter);
 
+const accommodationsRouter = require('./routes/accommodations');
+app.use('/accommodations', accommodationsRouter);
+
 // Define a simple route
 app.get('/', (req, res) => {
   res.send('Hello from Express!');

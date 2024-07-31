@@ -37,4 +37,30 @@ router.post('/', async (req, res) => { // Change this to root to match '/users'
   }
 });
 
+// Update password by deleting old user and creating new one
+router.put('/update-password', async (req, res) => {
+  const { email, location, newPassword } = req.body;
+  try {
+      const user = await User.findOne({ email, location });
+      if (user) {
+          // Delete the old user
+          await User.deleteOne({ _id: user._id });
+          const hashedPassword = bcrypt.hashSync(newPassword, 10);
+          // Create a new user with the updated password
+          const newUser = new User({
+              name: user.name,
+              email: user.email,
+              password: hashedPassword,
+              location: user.location
+          });
+          await newUser.save();
+          res.json({ message: 'Password updated successfully.' });
+      } else {
+          res.status(404).json({ message: 'Email or location does not match.' });
+      }
+  } catch (err) {
+      res.status(500).json({ message: 'Server error' });
+  }
+});
+
 module.exports = router;
