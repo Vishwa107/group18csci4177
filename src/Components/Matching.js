@@ -32,7 +32,8 @@ const Matching = () => {
   //get the list
   const getList = ()=>{
   try{
-  const url = `http://localhost:5001/api/student/list`
+  // const url = `http://localhost:5001/api/student/list`
+  const url = `https://group18csci4177.onrender.com/api/student/list`
     const cfg = {
       ...form.getFieldsValue()
     }
@@ -58,7 +59,8 @@ const Matching = () => {
   }
 
   const getStatusList = ()=>{
-    const url = "http://localhost:5001/api/student/list"
+    // const url = "http://localhost:5001/api/student/list"
+    const url = "https://group18csci4177.onrender.com/api/student/list"
     const cfg = {
       status:'1'
     }
@@ -74,8 +76,7 @@ const Matching = () => {
   //Modify the favorites status
   const handleChange = (item)=>{
     // const url = "https://group18csci4177.onrender.com/api/student/update"
-
-    const url = "http://localhost:5001/api/student/update"
+    const url = "https://group18csci4177.onrender.com/api/student/update"
     const cfg = {
       id:item._id,
       status:item.status==='2'?'1':'2'
