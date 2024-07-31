@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Form, Input, Select, Row, Col, Button, Rate, message } from 'antd';
-import './css/App.css';
-import http from './api/index';
+import './Matching.css';
+import http from '../api/index';
 
 const sexOption = [
   { value: "1", label: 'man' },
@@ -32,7 +32,7 @@ const Matching = () => {
   //get the list
   const getList = ()=>{
   try{
-  const url = `https://group18csci4177.onrender.com/api/student/list`
+  const url = `http://localhost:5001/api/student/list`
     const cfg = {
       ...form.getFieldsValue()
     }
@@ -58,7 +58,7 @@ const Matching = () => {
   }
 
   const getStatusList = ()=>{
-    const url = `https://group18csci4177.onrender.com/api/student/list`
+    const url = "http://localhost:5001/api/student/list"
     const cfg = {
       status:'1'
     }
@@ -73,7 +73,9 @@ const Matching = () => {
 
   //Modify the favorites status
   const handleChange = (item)=>{
-    const url = `https://group18csci4177.onrender.com/api/student/${item._id}`
+    // const url = "https://group18csci4177.onrender.com/api/student/update"
+
+    const url = "http://localhost:5001/api/student/update"
     const cfg = {
       id:item._id,
       status:item.status==='2'?'1':'2'
@@ -112,7 +114,7 @@ const Matching = () => {
     return (
       <div className='content'>
         <Card className='left' hoverable>
-          <h1>Refine your search</h1>
+          <h3 className='font-h1'>Refine your search</h3>
           <Form layout="vertical" form={form}>
             <Form.Item label="name" name="name">
               <Input placeholder='name' onBlur={()=>getList()} allowClear/>
@@ -136,7 +138,7 @@ const Matching = () => {
         </Card>
         <Card className='right' hoverable>
           <div className='right-header'>
-            <h1>Search Results</h1>
+          <h1 className='font-h1'>Search Results</h1>
             <Button type="primary" onClick={()=>{goStatusList()}}>Enter Favorites list</Button>
           </div>
           <Row gutter={[16, 24]}>
@@ -167,7 +169,7 @@ const Matching = () => {
       <div>
         <Card hoverable>
           <div className='right-header'>
-            <h1>Favorite List</h1>
+          <h1 className='font-h1'>Favorite List</h1>
             <Button type="primary" onClick={()=>{goAllList()}}>Return Dashboard</Button>
           </div>
           <Row gutter={[16, 24]}>
