@@ -24,7 +24,6 @@ import axios from 'axios';
 function App() {
   const [showModal, setShowModal] = useState(true);
   const [userName, setUserName] = useState(null);
-  const JWT_SECRET = process.env.JWT_SECRET;
 
   const handleCloseModal = () => {
     setShowModal(false);
