@@ -38,7 +38,7 @@ const StoreLocator = () => {
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [map, setMap] = useState(null);
   const [directionsService, setDirectionsService] = useState(null);
-  const [geocoder,setGeocoder] = useState(null);
+  //const [geocoder,setGeocoder] = useState(null);
   const [error, setError] = useState('');
   const [distance, setDistance] = useState(null);
   const autocompleteRef = useRef(null);
@@ -82,7 +82,7 @@ const StoreLocator = () => {
   const onMapLoad = (mapInstance) => {
     setMap(mapInstance);
     setDirectionsService(new window.google.maps.DirectionsService());
-    setGeocoder(new window.google.maps.Geocoder());
+    //setGeocoder(new window.google.maps.Geocoder());
 
     const locationButton = document.createElement("button");
     locationButton.textContent = "Pan to Current Location";

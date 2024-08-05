@@ -25,7 +25,7 @@ const Matching = () => {
   const [flag,setFlag] = useState(false)
 
   const getDirectory = (item,list)=>{
-    const record = list.find(record=>record.value==item)
+    const record = list.find(record=>record.value===item)
     return record&&record.label?record.label:''
   }
 
