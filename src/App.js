@@ -21,7 +21,7 @@ import AddUser from './Components/AddUser.js';
 import Login from './Components/Login.js';
 import axios from 'axios';
 import StoreLocator from './Components/StoreLocator.js';
-import Matching from './Components/front/src/App.js';
+import Matching from './Components/Matching';
 
 function App() {
   const [showModal, setShowModal] = useState(true);
