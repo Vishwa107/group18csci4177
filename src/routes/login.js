@@ -5,7 +5,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 
 // Ensure JWT_SECRET is defined
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || 'gH9LfzN+P2X5Gz8rJ1N1Y6RzV8K6U4T2P5M7B4V9Q2N3A1C7D9W1H3K4P0';
 if (!JWT_SECRET) {
   throw new Error('JWT_SECRET environment variable is not defined');
 }
