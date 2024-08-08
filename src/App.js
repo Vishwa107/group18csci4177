@@ -70,8 +70,8 @@ function App() {
           <Route path="/forgot-password" element={<><ForgotPassword /></>} />
           <Route path="/" element={ <Login/> } />
           <Route path="/signup" element={ <AddUser/> } />
-          <Route path="/1" element={<Matching/>} />
-          <Route path="/3" element={<StoreLocator/>} />
+          <Route path="/1" element={<><Navbar userName={userName}/><Matching/><Footer/></>} />
+          <Route path="/3" element={<><Navbar userName={userName}/><StoreLocator/><Footer/></>} />
           <Route path="/2" element={
             <>
               <Navbar userName={userName} />
