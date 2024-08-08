@@ -35,12 +35,34 @@ const UserProfile = () => {
     fetchUser();
   }, []);
 
+  // const handleUpdate = async () => {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     try {
+  //       const response = await axios.put(
+  //         'https://group18csci4177.onrender.com/users/update-profile', // Updated endpoint
+  //         { email: updatedEmail, location: updatedLocation, name: updatedName },
+  //         {
+  //           headers: { Authorization: `Bearer ${token}` },
+  //         }
+  //       );
+  //       if (response.data.success) {
+  //         setUser(response.data.user);
+  //         setIsEditing(false);
+  //         navigate('/profile'); // Redirect to profile page after saving
+  //       }
+  //     } catch (error) {
+  //       console.error('Error updating user:', error);
+  //     }
+  //   }
+  // };
+
   const handleUpdate = async () => {
     const token = localStorage.getItem('token');
     if (token) {
       try {
         const response = await axios.put(
-          'https://group18csci4177.onrender.com/users/update-profile', // Updated endpoint
+          'https://group18csci4177.onrender.com/users/update-profile', // Ensure this matches your backend route
           { email: updatedEmail, location: updatedLocation, name: updatedName },
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -50,6 +72,8 @@ const UserProfile = () => {
           setUser(response.data.user);
           setIsEditing(false);
           navigate('/profile'); // Redirect to profile page after saving
+        } else {
+          console.error('Update failed:', response.data.message);
         }
       } catch (error) {
         console.error('Error updating user:', error);

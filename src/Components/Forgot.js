@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Forgot.css'; // 
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [location, setLocation] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleLocationChange = (e) => setLocation(e.target.value);
@@ -21,6 +23,7 @@ const ForgotPassword = () => {
         newPassword,
       });
       setMessage(response.data.message);
+      navigate('/');
     } catch (error) {
       console.error('Error updating password', error);
       setMessage('An error occurred while updating the password.');

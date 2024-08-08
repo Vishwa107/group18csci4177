@@ -58,24 +58,47 @@ router.put('/update-password', async (req, res) => {
   }
 });
 
+// router.put('/update-profile', async (req, res) => {
+//   const { email, location, name } = req.body;
+//   try {
+//     const user = await User.findOne({ email, location, name });
+//     if (user) {
+      
+//     user.name = name;
+//     user.email = email;
+//     user.location = location;
+//     await user.save();
+      
+//       res.json({ message: 'Data updated successfully.' });
+//     } else {
+//       res.status(404).json({ message: 'Email or location does not match.' });
+//     }
+//   } catch (err) {
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
+
 router.put('/update-profile', async (req, res) => {
-  const { email, location, name } = req.body;
+  const { email, name, location } = req.body;
   try {
-    const user = await User.findOne({ email, location, name });
+    // Find the user by email
+    const user = await User.findOne({ email });
     if (user) {
-      
-    user.name = name;
-    user.email = email;
-    user.location = location;
-    await user.save();
-      
-      res.json({ message: 'Password updated successfully.' });
+      // Update user details
+      user.name = name || user.name;
+      user.location = location || user.location;
+      await user.save(); // Save the updated user
+
+      // Respond with updated user info
+      res.json({ success: true, user, message: 'Profile updated successfully.' });
     } else {
-      res.status(404).json({ message: 'Email or location does not match.' });
+      res.status(404).json({ success: false, message: 'User not found.' });
     }
   } catch (err) {
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error updating profile:', err);
+    res.status(500).json({ success: false, message: 'Server error.' });
   }
 });
+
 
 module.exports = router;
