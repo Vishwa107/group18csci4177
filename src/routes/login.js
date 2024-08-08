@@ -76,4 +76,35 @@ router.get('/me', verifyToken, async (req, res) => {
   }
 });
 
+
+
+// // Define the route for updating profile
+// router.put('/update-profile', verifyToken, async (req, res) => {
+//   const { name, email, location } = req.body;
+
+//   if (!name || !email || !location) {
+//     return res.status(400).json({ success: false, message: 'All fields are required' });
+//   }
+
+//   try {
+//     const user = await User.findById(req.userId);
+//     if (!user) {
+//       return res.status(404).json({ success: false, message: 'User not found' });
+//     }
+
+//     user.name = name;
+//     user.email = email;
+//     user.location = location;
+//     await user.save();
+
+//     res.json({ success: true, message: 'Profile updated successfully' });
+//   } catch (error) {
+//     console.error('Update profile error:', error);
+//     res.status(500).json({ success: false, message: 'Server error' });
+//   }
+// });
+
+
+
+
 module.exports = router;
