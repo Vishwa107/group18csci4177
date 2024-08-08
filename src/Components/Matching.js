@@ -4,17 +4,18 @@ import './Matching.css';
 import http from '../api/index';
 
 const sexOption = [
-  { value: "1", label: 'man' },
-  { value: "2", label: 'woman' }
+  { value: "1", label: 'Man' },
+  { value: "2", label: 'Woman' },
+  { value: "3", label: 'Other' }
 ];
 
 const classOption = [
-  { value: '1', label: 'sophomore' },
-  { value: '2', label: 'master' },
-  { value: '3', label: 'freshman' },
-  { value: '4', label: 'senior' },
-  { value: '5', label: 'junior' },
-  { value: '6', label: 'phd' },
+  { value: '1', label: 'Sophomore' },
+  { value: '2', label: 'Master' },
+  { value: '3', label: 'Freshman' },
+  { value: '4', label: 'Senior' },
+  { value: '5', label: 'Junior' },
+  { value: '6', label: 'PhD' },
 ];
 
 const Matching = () => {
@@ -116,22 +117,22 @@ const Matching = () => {
         <Card className='left' hoverable>
           <h3 className='font-h1'>Refine your search</h3>
           <Form layout="vertical" form={form}>
-            <Form.Item label="name" name="name">
+            <Form.Item label="Name" name="name">
               <Input placeholder='name' onChange={getList} allowClear />
             </Form.Item>
-            <Form.Item label="gender" name="gender">
+            <Form.Item label="Gender" name="gender">
               <Select placeholder='gender' options={sexOption} onChange={getList} allowClear />
             </Form.Item>
-            <Form.Item label="age" name="age">
+            <Form.Item label="Age" name="age">
               <Input placeholder='Age' onChange={getList} allowClear />
             </Form.Item>
-            <Form.Item label="grade" name="class">
-              <Select placeholder='Grade' options={classOption} onChange={getList} allowClear />
+            <Form.Item label="Year of Degree" name="class">
+              <Select placeholder='Status' options={classOption} onChange={getList} allowClear />
             </Form.Item>
-            <Form.Item label="hobby" name="hobby">
+            <Form.Item label="Hobby" name="hobby">
               <Input placeholder='Hobby' onChange={getList} allowClear />
             </Form.Item>
-            <Form.Item label="major" name="speciality">
+            <Form.Item label="Major" name="speciality">
               <Input placeholder='Major' onChange={getList} allowClear />
             </Form.Item>
           </Form>
