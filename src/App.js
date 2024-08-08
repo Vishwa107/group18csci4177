@@ -22,6 +22,7 @@ import Login from './Components/Login.js';
 import axios from 'axios';
 import StoreLocator from './Components/StoreLocator.js';
 import Matching from './Components/Matching';
+import UserProfile from './Components/UserProfile';
 import Info from './Components/Info';
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
           <Route path="/1" element={<><Navbar userName={userName}/><Matching/><Footer/></>} />
           <Route path="/5" element={<><Navbar userName={userName}/><Info/><Footer/></>} />
           <Route path="/3" element={<><Navbar userName={userName}/><StoreLocator/><Footer/></>} />
+          <Route path="/profile" element={<><Navbar userName={userName}/><UserProfile/><Footer/></>} />
           <Route path="/2" element={
             <>
               <Navbar userName={userName} />

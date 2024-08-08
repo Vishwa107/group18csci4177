@@ -58,4 +58,24 @@ router.put('/update-password', async (req, res) => {
   }
 });
 
+router.put('/update-profile', async (req, res) => {
+  const { email, location, name } = req.body;
+  try {
+    const user = await User.findOne({ email, location, name });
+    if (user) {
+      
+    user.name = name;
+    user.email = email;
+    user.location = location;
+    await user.save();
+      
+      res.json({ message: 'Password updated successfully.' });
+    } else {
+      res.status(404).json({ message: 'Email or location does not match.' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 module.exports = router;
