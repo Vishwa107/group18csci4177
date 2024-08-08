@@ -57,9 +57,8 @@ const Housing = () => {
   const accommodationsToShow = viewBookmarks ? bookmarkedAccommodations : filteredAccommodations;
 
   return (
-    <div className="App">
+    <div className="Housing">
       <header className="App-header">
-        <h1>Accommodation Filtering</h1>
         <div className="filters">
           <label>
             Max Price:

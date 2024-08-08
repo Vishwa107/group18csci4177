@@ -1,18 +1,13 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
-}
-
-.App {
-  text-align: center;
+.Housing {
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
 }
 
 .App-header {
-  background-color: #ff8c00; /* Orange theme */
-  padding: 20px;
-  color: white;
+  padding: 10px;
+  color: black;
 }
 
 h1 {
@@ -45,17 +40,16 @@ h1 {
 .toggle-button {
   background-color: white;
   color: #ff8c00;
-  border: 2px solid #ff8c00;
+  border: 1px solid #ff8c00;
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .toggle-button:hover {
-  background-color: #ff8c00;
-  color: white;
+  background-color: #d7f4ff;
+  color: black;
 }
 
 .results {
@@ -92,7 +86,7 @@ h1 {
 }
 
 .bookmark-button {
-  background-color: #ff8c00;
+  background-color: #e57800;
   color: white;
   border: none;
   padding: 10px 20px;
