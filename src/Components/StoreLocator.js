@@ -163,7 +163,7 @@ const StoreLocator = () => {
   if (!isLoaded) return <div>Loading Maps...</div>;
 
   return (
-    <><Navbar></Navbar>
+    <>
     <div className="store-locator-container">
       <div className="search-bar-container">
         <Autocomplete
@@ -276,7 +276,8 @@ const StoreLocator = () => {
             ))}
         </div>
       </div>
-    </div> <Footer></Footer> </>
+    </div> 
+    </>
   );
 }; 
 
