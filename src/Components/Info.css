@@ -1,0 +1,81 @@
+.info {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mainImage {
+    width: 100vw;
+    height: 700px;
+}
+  
+.info h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.places-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.place {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+  
+.place-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+  
+.place-info {
+    flex: 1;
+}
+  
+.place h2 {
+    margin-top: 0;
+    color: #2980b9;
+}
+  
+.place p {
+    margin: 5px 0 0;
+    color: #7f8c8d;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+  
+.page-button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+.page-button:hover {
+    background-color: #1f5c8e;
+}

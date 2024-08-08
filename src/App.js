@@ -22,6 +22,7 @@ import Login from './Components/Login.js';
 import axios from 'axios';
 import StoreLocator from './Components/StoreLocator.js';
 import Matching from './Components/Matching';
+import Info from './Components/Info';
 
 function App() {
   const [showModal, setShowModal] = useState(true);
@@ -71,6 +72,7 @@ function App() {
           <Route path="/" element={ <Login/> } />
           <Route path="/signup" element={ <AddUser/> } />
           <Route path="/1" element={<><Navbar userName={userName}/><Matching/><Footer/></>} />
+          <Route path="/5" element={<><Navbar userName={userName}/><Info/><Footer/></>} />
           <Route path="/3" element={<><Navbar userName={userName}/><StoreLocator/><Footer/></>} />
           <Route path="/2" element={
             <>
