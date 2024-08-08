@@ -1,8 +1,6 @@
 import React, { useCallback, useState, useRef } from 'react';
 import { GoogleMap, useLoadScript, Marker, InfoWindow, DirectionsRenderer, Autocomplete } from '@react-google-maps/api';
 import './StoreLocator.css'
-import Navbar from './Navbar';
-import Footer from './Footer';
 
 const mapContainerStyle = {
   width: '100%',
